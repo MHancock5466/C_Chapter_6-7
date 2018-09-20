@@ -9,33 +9,42 @@
 using namespace std;
 
 int main() {
-	int bookChoice = 0;
-	int secretBook;
-	int attempts = 0;
-
-	srand(time(NULL));
-	secretBook = rand() % 50 + 1;
-
-	cout << "Welcome to my chamber of Library Information Services (Otherwise known as LIS)" << endl;
-	cout << "\nThere is a single magic book on my shelf of 50 books.\nYou have two tries to find it.\nIf you do not, you shall perish." << endl;
+	int replay = 0;
 	
-	while(bookChoice != secretBook && attempts != 2) {
-		cout << "\nChoose a book by its number: ";
-		cin >> bookChoice;
+	cout << "Welcome to my chamber of Library Information Services (Otherwise known as LIS)" << endl;
+	
+	do {
+		int bookChoice = 0;
+		int secretBook;
+		int attempts = 0;		
+	
+		srand(time(NULL));
+		secretBook = rand() % 50 + 1;
 
-		if (bookChoice < secretBook) {
-			cout << "Nice try. You chose too low." << endl;
-			attempts++;
+		cout << "\nThere is a single magic book on my shelf of 50 books.\nYou have two tries to find it.\nIf you do not, you shall perish." << endl;
+	
+		while(bookChoice != secretBook && attempts != 2) {
+			cout << "\nChoose a book by its number: ";
+			cin >> bookChoice;
+
+			if (bookChoice < secretBook) {
+				cout << "Nice try. You chose too low." << endl;
+				attempts++;
+			}
+			else if (bookChoice > secretBook) {
+				cout << "Almost. Your number was too high." << endl;
+				attempts++;
+			}
+			else {
+				cout << "Impressive. You shall live... for now." << endl;
+				attempts = 2;
+			}
 		}
-		else if (bookChoice > secretBook) {
-			cout << "Almost. Your number was too high." << endl;
-			attempts++;
-		}
-		else {
-			cout << "Impressive. You shall live... for now." << endl;
-			attempts = 2;
-		}
-	}
+		cout << "\nWould you like to play again?\n1 - Yes\n2 - No\nYour Choice: ";
+		cin >> replay;
+		cout << endl;
+	} while (replay != 2);
+	
 	system("pause");
 	return 0;
 }
