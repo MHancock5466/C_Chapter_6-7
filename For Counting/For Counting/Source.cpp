@@ -6,20 +6,6 @@
 using namespace std;
 
 int main() {
-	/*for (int i = 0; i <= 100; i = i + 3) {
-		cout << i << endl;
-		if (i == 48) {
-			cout << "50" << endl;
-			cout << "Wanna hear a joke?" << endl;
-		}
-	}
-
-	for (int x = 0; x <= 100; x = x + 5) {
-		cout << x << endl;
-		if (x == 50)
-			cout << "This code." << endl;
-	}*/
-
 	for (string o = "o"; o != "          o"; o = " " + o) {
 		cout << o << endl;
 	}
