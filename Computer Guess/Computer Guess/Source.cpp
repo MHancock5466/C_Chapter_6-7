@@ -18,7 +18,7 @@ int main() {
 	do {
 		int userNumber;
 		int computerNumber = 0;
-		int upperLimit = 1000000;
+		int upperLimit = 1000;
 		int lowerLimit = 0;
 		int attempts = 0;
 	
