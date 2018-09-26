@@ -18,7 +18,7 @@ int main() {
 	do {
 		int userNumber;
 		int computerNumber = 0;
-		int upperLimit = 100;
+		int upperLimit = 1000000;
 		int lowerLimit = 0;
 		int attempts = 0;
 	
@@ -37,15 +37,18 @@ int main() {
 
 			attempts++;
 			cout << "\nComputer Guess: " << computerNumber << "\nComputer Attempts: " << attempts << endl;
-			cout << endl;
-			if (computerNumber > userNumber)
+			if (computerNumber > userNumber) {
 				upperLimit = computerNumber;
-			else if (computerNumber < userNumber)
+				cout << "Too High." << endl;
+			}
+			else if (computerNumber < userNumber) {
 				lowerLimit = computerNumber;
+				cout << "Too Low." << endl;
+			}
 			sleep_for(seconds(1));
 		}
 
-		cout << "The computer solved your random number!" << "\nIt only took it " << attempts << " tries." << endl;
+		cout << "\nThe computer solved your random number!" << "\nIt only took it " << attempts << " tries." << endl;
 		cout << "\nWould you like to play again?\n1 - Yes\n2 - No\nYour Choice: ";
 		cin >> replay;
 		cout << endl;
